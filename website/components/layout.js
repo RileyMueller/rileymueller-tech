@@ -1,13 +1,10 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from './layout.module.css'
-import Link from 'next/link'
 
-export const siteTitle = 'Riley Mueller\'s Personal Website'
+export const siteTitle = 'rileymueller.tech'
 
 export default function Layout({children}) {
     return (
-        <div className={styles.container}>
+        <div>
             <Head>
                 <link rel='icon' href='/favicon.ico'/>
                 <meta 
@@ -16,13 +13,29 @@ export default function Layout({children}) {
                 <meta
                     name='og:title' content={siteTitle}/>
             </Head>
-            <header className={styles.header}>
+            <header>
                 {/* I want to have a bar of links to various pages */}
+                <div className='bg-gray-800'>
+                    <div className='max-w-7xl mx-auto px-2 sm:px-6 lg:px-8'>
+                        <div className='relative flex items-center justify-between h-16'>
+                            <div class="flex space-x-4">
+                                <div class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-small" aria-current="page">rileymueller.tech</div>
+
+                                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+
+                                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+
+                                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </header>
             <main>{children}</main>
-            <div className={styles.footer}>
+            <footer>
                 {/* I want to have footer stuff here */}
-            </div>
+                Footer stuff
+            </footer>
         </div>
     )
 }
