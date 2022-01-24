@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import styles from './layout.module.css'
 
 export const siteTitle = 'rileymueller.tech'
 
@@ -15,21 +14,36 @@ export default function Layout({children}) {
                 <meta
                     name='og:title' content={siteTitle}/>
             </Head>
-            <div className='flex flex-col min-h-screen'>
-                <div className='heropattern-hexagons-stone-500 bg-rose-900 text-white'>
-                    rileymueller.tech
-                    <Link href='/'><a className='px-3 py-2 rounded-md text-sm font-medium hover:text-zinc-400 hover:bg-rose-900'>
-                        Home
-                    </a></Link>
-                    <Link href='/about'><a className='px-3 py-2 rounded-md text-sm font-medium hover:text-zinc-400 hover:bg-rose-900'>
-                        About
-                    </a></Link>
-                    <Link href='/projects'><a className='px-3 py-2 rounded-md text-sm font-medium hover:text-zinc-400 hover:bg-rose-900'>
-                        Projects
-                    </a></Link>
+            {/*Flex for the header-main-footer arrangement*/}
+            <div className='flex flex-col min-h-screen bg-gray-800 text-gray-200'>
+                <div className='heropattern-hexagons-gray-800 bg-rose-900'>
+                    <div className='my-5 flex flex-grow'>
+                        <div className='basis-1/2 self-center flex flex-row ml-10'>
+                            <div className='px-3 py-2 text-center text-2xl font-semibold'>
+                                rileymueller.tech
+                            </div>
+                        </div>
+                        <div className='basis-1/2 self-center flex flex-row-reverse mr-10'>
+                            <Link href='/'>
+                                <a className='px-3 hover:px-10 duration-100 py-2 mx-4 rounded-md text-sm font-medium border-2 bg-rose-900 border-gray-800'>
+                                Home
+                                </a>
+                            </Link>
+                            <Link href='/about'>
+                                <a className='px-3 hover:px-10 duration-100 py-2 mx-4 rounded-md text-sm font-medium border-2 bg-rose-900 border-gray-800'>
+                                About
+                            </a>
+                            </Link>
+                            <Link href='/projects'>
+                                <a className='px-3 hover:px-10 duration-100 py-2 mx-4 rounded-md text-sm font-medium border-2 bg-rose-900 border-gray-800'>
+                                Projects
+                                </a>
+                            </Link>
+                        </div>
+                    </div>                    
                 </div>
                 <main class='flex-grow'>{children}</main>
-                <footer className='heropattern-hexagons-orange-800 bg-red-50 h-16'>
+                <footer className='heropattern-hexagons-gray-800 bg-rose-900 h-16'>
                     {/* I want to have footer stuff here */}
                     Footer stuff
                 </footer>
