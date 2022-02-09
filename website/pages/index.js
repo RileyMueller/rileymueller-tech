@@ -1,27 +1,23 @@
-import Head from 'next/head'
-import Layout, {siteTitle} from '../components/layout'
-import Link from 'next/link'
+import Layout from '../components/layout'
 import Card from '../components/card'
 
 export default function Home() {
-  return (
-    <Layout>
-      <Head>
-        <title>Home | {siteTitle}</title>
-      </Head>
-      {/* The cards div */}
-      <div className='bg-gray-700 w-full flex flex-col items-center'>
-        <div>
-          What I am Working On
-        </div>
-        <div className='flex flex-row space-x-4'>
-          <Card content={'English 415 Research Project'} title={'English 415 Research Project'} link='/about'/>
-          <Card content={'English 415 Research Project'} title={'English 415 Research Project'} link='/about'/>
-        </div>
-        <div className='h-10'>
-
-        </div>
-      </div>      
-    </Layout>    
-  )
+    return (
+      	<Layout subTitle='Home'>
+        	
+      		{/* The cards div */}
+			<div className='text-5xl pb-5 pt-5'>
+				What I am working on
+			</div>
+			<div className='grow h-fit w-full flex flex-col justify-center'>
+				<div className='flex flex-row items-center pt-5 pb-5 w-full justify-center space-x-14'>
+					<Card 
+						imagesrc={'/rationality_from_ai_to_zombies_cover.jpg'} 
+						title={'\'Exploring the Sequences\' Blog Posts'} 
+						link='/ExploringTheSequences'/>
+				</div>
+				
+			</div>
+    	</Layout>    
+  	)
 }
